@@ -1,0 +1,24 @@
+<br>
+<h2> Liste des invitations :</h2><br>
+
+<ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let x of requests"
+    
+    >
+      {{ x.username }}  
+
+      <button
+      style="margin-left: 13cm;"
+      type="submit"
+      class="badge badge-success"
+      (click)="acceptReq(x._id)"
+    >
+      Accepter
+    </button>
+    <button class="badge badge-danger mr-2" (click)="declineReq(x._id)">
+        Supprimer l'invitation
+      </button>
+    </li>
+  </ul>

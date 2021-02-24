@@ -1,0 +1,77 @@
+<br>
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recherche par nom"
+          [(ngModel)]="title"
+          (keyup)="searchUser()"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchUser()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Liste des Pangolins  :</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let x of users; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveUser(x, i)"
+        >
+          {{ x.username }}
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentUser">
+        <h4>Détails sur l'utilisateur</h4>
+        <div>
+          <label><strong>Nom :</strong></label> {{ currentUser.username }}
+        </div>
+
+        <div>
+            <label><strong>Age :</strong></label> {{ currentUser.age }}
+          </div>
+
+          <div>
+            <label><strong>Famille :</strong></label> {{ currentUser.famille }}
+          </div>
+
+          <div>
+            <label><strong>Race :</strong></label> {{ currentUser.race }}
+          </div>
+          
+          <div>
+            <label><strong>Nourriture :</strong></label> {{ currentUser.nourriture }}
+          </div>
+        
+       
+  
+
+        <a class="badge badge-warning" (click)="sendRequest()">
+          Ajouter amis
+        </a>
+
+
+
+      </div>
+  
+      <div *ngIf="!currentUser">
+        <br />
+        <p>Cliquer sur un Pangolin...</p>
+      </div>
+    </div>
+  </div>
+  

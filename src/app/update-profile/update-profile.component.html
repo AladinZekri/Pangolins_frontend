@@ -1,0 +1,90 @@
+<br>
+<div style="width: 400px; margin: flex;">
+    <div *ngIf="currentuserr" class="edit-form">
+      <h4>Profile</h4>
+      <form>
+        <div class="form-group">
+          <label for="username">Username :</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            [(ngModel)]="currentuserr.username"
+            name="username"
+          />
+        </div>
+
+
+        <div class="form-group">
+          <label for="age">Age :</label>
+          <input
+            type="text"
+            class="form-control"
+            id="age"
+            [(ngModel)]="currentuserr.age"
+            name="age"
+          />
+        </div>
+
+        
+        
+        <div class="form-group">
+            <label for="famille">Famille :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="famille"
+              [(ngModel)]="currentuserr.famille"
+              name="famille"
+            />
+          </div>
+  
+        
+          <div class="form-group">
+            <label for="race">Race :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="race"
+              [(ngModel)]="currentuserr.race"
+              name="race"
+            />
+          </div>
+  
+        
+          <div class="form-group">
+            <label for="nourriture">Nourriture :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nourriture"
+              [(ngModel)]="currentuserr.nourriture"
+              name="nourriture"
+            />
+          </div>
+          
+        
+  
+        
+      </form>
+  
+    
+   
+  
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateUser()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+ 
+    <div *ngIf="!currentuserr">
+      <br />
+      <p>Cannot access this link...</p>
+    </div>
+  </div>
+  
