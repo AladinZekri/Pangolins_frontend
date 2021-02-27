@@ -30,7 +30,9 @@ export class AuthService {
       famille,
       race,
       nourriture
-    }, httpOptions);
+    }, httpOptions 
+
+    );
   }
 
   // Get all users

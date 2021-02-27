@@ -9,6 +9,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { UsersListComponent } from './users-list/users-list.component';
 import { RequestsComponent } from './requests/requests.component';
 import { FriendsListComponent } from './friends-list/friends-list.component';
+import { AjoutComponent } from './ajout/ajout.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'users', component: UsersListComponent },
   { path: 'requests', component: RequestsComponent },
   { path: 'friends', component: FriendsListComponent },
+  { path: 'users/ajout', component: AjoutComponent },
   { path: 'updateProfile/:id', component: UpdateProfileComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];

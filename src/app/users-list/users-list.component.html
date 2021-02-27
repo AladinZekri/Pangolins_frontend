@@ -64,12 +64,20 @@
           Ajouter amis
         </a>
 
+        <a class="badge badge-warning" (click)="cliked()">
+          asy 
+        </a>
+        
+
+          <!-- <button [routerLink]="'/ajout'">ajouter nouveau ami</button>-->
+          <a href="/ajout" routerLink="ajout">Amis </a>
 
 
       </div>
   
       <div *ngIf="!currentUser">
         <br />
+        <a href="/ajout" routerLink="ajout">ajout Pango </a>
         <p>Cliquer sur un Pangolin...</p>
       </div>
     </div>

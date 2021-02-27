@@ -1,0 +1,116 @@
+<form
+*ngIf="!isSuccessful"
+name="form"
+(ngSubmit)="f.form.valid && onSubmit()"
+#f="ngForm"
+novalidate
+>
+<div class="form-group">
+  <label for="username">Nom </label>
+  <input
+    type="text"
+    class="form-control"
+    name="username"
+    [(ngModel)]="form.username"
+    required
+    minlength="3"
+    maxlength="20"
+    #username="ngModel"
+  />
+
+  <label for="username">Email </label>
+  <input
+    type="text"
+    class="form-control"
+    name="username"
+    [(ngModel)]="form.email"
+    required
+    minlength="3"
+    maxlength="20"
+    #username="ngModel"
+  />
+  <div class="alert-danger" *ngIf="username.errors && f.submitted">
+    <div *ngIf="username.errors.required">Username is required</div>
+    <div *ngIf="username.errors.minlength">
+      Username must be at least 3 characters
+    </div>
+    <div *ngIf="username.errors.maxlength">
+      Username must be at most 20 characters
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="password">Mot de passe  </label>
+  <input
+    type="password"
+    class="form-control"
+    name="password"
+    [(ngModel)]="form.password"
+    required
+    minlength="6"
+    #password="ngModel"
+  />
+  <div class="alert-danger" *ngIf="password.errors && f.submitted">
+    <div *ngIf="password.errors.required">Password is required</div>
+    <div *ngIf="password.errors.minlength">
+      Password must be at least 6 characters
+    </div>
+  </div>
+</div>
+<div class="form-group">
+
+
+
+  <label for="password">Age</label>
+  <input
+    type="text"
+    class="form-control"
+    name="age"
+    [(ngModel)]="form.age"
+    
+
+    #age="ngModel"
+  />
+
+  <label for="password">Famille</label>
+  <input
+    type="text"
+    class="form-control"
+    name="famille"
+    [(ngModel)]="form.famille"
+
+
+    #famille="ngModel"
+  />
+
+  <label for="password">Race</label>
+  <input
+    type="text"
+    class="form-control"
+    name="race"
+    [(ngModel)]="form.race"
+
+    #race="ngModel"
+  />
+
+  <label for="password">Nourriture</label>
+  <input
+    type="text"
+    class="form-control"
+    name="nourriture"
+    [(ngModel)]="form.nourriture"
+
+    #nourriture="ngModel"
+  />
+  <br>
+
+
+  
+  <button type="button" class="btn btn-primary btn-block">Sign Up</button>
+</div>
+
+<div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+  Signup failed!<br />{{ errorMessage }}
+</div>
+</form>

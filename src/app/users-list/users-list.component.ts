@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
+
 
 @Component({
   selector: 'app-users-list',
@@ -14,6 +16,8 @@ export class UsersListComponent implements OnInit {
   currentIndex = -1;
   title = '';
   constructor(    
+    private route: ActivatedRoute,
+   
     private authService: AuthService,
     private token: TokenStorageService
       
@@ -74,4 +78,30 @@ x:any
     )
   }
 
-}
+  staticAdd(): void {
+    
+
+    this.authService.register("panoooogo89", "a9@ooz2.e", "password",99,"famille","race","nourriture").subscribe(
+      data => {
+        console.log(data);
+      
+      })}
+    
+    add : any
+    req : any
+    
+      async cliked(){
+      this.add = await  this.staticAdd();
+      this.req = await this.sendRequest();
+
+      }
+
+    
+    
+    
+    
+    }
+
+
+
+   

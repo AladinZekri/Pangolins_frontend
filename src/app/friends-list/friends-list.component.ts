@@ -33,4 +33,10 @@ export class FriendsListComponent implements OnInit {
           console.log(error);
         });
   }
+
+  
+
+    
+    
+
 }
