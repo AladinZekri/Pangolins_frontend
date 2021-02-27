@@ -32,14 +32,9 @@ export class AjoutComponent implements OnInit {
     //private store: Store<{ todoState: Array<Todo> }>
     
 
-    
-
-
+  
 
   ) {
-    this.store.select(state => state.userRed).subscribe(
-      data =>{this.x = data}
-    );
     
    };
     
@@ -54,7 +49,7 @@ export class AjoutComponent implements OnInit {
 
   x:any
   y:any
-  newTodoText:userClass;
+ 
   onSubmit(): void {
 
     
@@ -84,7 +79,7 @@ export class AjoutComponent implements OnInit {
       
     );
   
-    this.store.dispatch(Add({ data: this.newTodoText || "Untitled task" }));
+    
     
 
   }
